@@ -58,7 +58,7 @@ if __name__ == '__main__':
     parser.add_argument('-f', "--folder", help='Folder you want to test',
                         default='D:/ruofan/git_space/phishpedia/benchmark/test15k_wo_localcontent/benign_sample_15k' )
 
-    parser.add_argument('-mdir', '--model_dir', help='Models for 5 brands', default='D:/ruofan/git_space/phishpedia/benchmark/SVM_imageset')
+    parser.add_argument('-m', '--model_dir', help='Models for 5 brands', default='D:/ruofan/git_space/phishpedia/benchmark/SVM_imageset')
     args = parser.parse_args()
 
     result_gen(args.output_path, args.folder, args.model_dir)
