@@ -12,7 +12,7 @@ import os
 import numpy as np
 import config as cfg
 
-def data_creation(folder, annot_file, img_folder, benign_base_dir, pos_neg_ratio = 3):
+def data_creation(folder, annot_file, img_folder, benign_base_dir, neg_ratio = 3):
     ## clean folder if destination folder exists
     if os.path.isdir(img_folder):
         shutil.rmtree(img_folder)
@@ -50,7 +50,7 @@ def data_creation(folder, annot_file, img_folder, benign_base_dir, pos_neg_ratio
                     pos.save(os.path.join(img_folder, brand, 'pos%s.png'%str(ct)))
 
                     ## repeatly sample from benign and get negative samples
-                    for _ in range(pos_neg_ratio):
+                    for _ in range(neg_ratio):
                         ## randomly sample a benign site
                         benign_shot_list = os.listdir(benign_base_dir)
                         while True:
@@ -153,10 +153,10 @@ if __name__ == "__main__":
     parser.add_argument('-a', "--annot_file", help='Annotation for training brands', default='D:/ruofan/git_space/phishpedia/benchmark/phish1000_coord.txt' )
     parser.add_argument('-o', '--output_folder', help='Created training folder', default='D:/ruofan/git_space/phishpedia/benchmark/SVM_imageset')
     parser.add_argument('-b', '--benign_folder', help='Benign screenshots to create negative samples', default='D:/ruofan/git_space/phishpedia/benchmark/test15k_wo_localcontent/benign_sample_15k')
-    parser.add_argument('-r', '--posneg_ratio', type=int, default=3)
+    parser.add_argument('-r', '--negpos_ratio', type=int, default=3)
     args = parser.parse_args()
     
-    data_creation(args.data_folder, args.annot_file, args.output_folder, args.benign_folder, args.posneg_ratio)
+    data_creation(args.data_folder, args.annot_file, args.output_folder, args.benign_folder, args.negpos_ratio)
     
     train(args.output_folder, cfg.logo_size, cfg.hog_param['orientation'],
           cfg.hog_param['pixel_per_cell'], cfg.hog_param['cell_per_block'])
