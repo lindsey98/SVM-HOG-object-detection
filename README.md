@@ -53,5 +53,5 @@ $ python test.py [options/default]
 ```
 
 ## Examples 
-- Bank of America logo is successfully detected from the screenshot
-![Sample output from SVM](img/boa.png)
+- PayPal logo is successfully detected from the screenshot
+![Sample output from SVM](img/paypal.png)
