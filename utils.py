@@ -96,7 +96,9 @@ def pred_logosense(model, shot_path):
             if window.shape[0] != winH or window.shape[1] != winW: # ensure the sliding window has met the minimum size requirement
                 continue
             fds = hog(window, cfg.hog_param['orientation'],
-                        cfg.hog_param['pixel_per_cell'], cfg.hog_param['cell_per_block'], block_norm='L2')  # extract HOG features from the window captured
+                        (cfg.hog_param['pixel_per_cell'], cfg.hog_param['pixel_per_cell']),
+                        (cfg.hog_param['cell_per_block'], cfg.hog_param['cell_per_block']), block_norm='L2',
+                         multichannel=True)  # extract HOG features from the window captured
             fds = fds.reshape(1, -1) # reshape the image to make a silouhette of hog
             pred = model.predict(fds) # use the SVM model to make a prediction on the HOG features extracted from the window
 

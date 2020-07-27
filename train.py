@@ -154,11 +154,11 @@ if __name__ == "__main__":
     parser.add_argument('-outf', '--output_folder', help='Created training folder', default='D:/ruofan/git_space/phishpedia/benchmark/SVM_imageset')
     parser.add_argument('-benignf', '--benign_folder', help='Benign screenshots to create negative samples', default='D:/ruofan/git_space/phishpedia/benchmark/test15k_wo_localcontent/benign_sample_15k')
     parser.add_argument('-ratio', '--posneg_ratio', type=int, default=3)
-    arg = parser.parse_args()
+    args = parser.parse_args()
     
-    data_creation(arg.data_folder, arg.annot_file, arg.output_folder, arg.benign_folder, arg.posneg_ratio)
+    data_creation(args.data_folder, args.annot_file, args.output_folder, args.benign_folder, args.posneg_ratio)
     
-    train(arg.output_folder, cfg.logo_size, cfg.hog_param['orientation'],
+    train(args.output_folder, cfg.logo_size, cfg.hog_param['orientation'],
           cfg.hog_param['pixel_per_cell'], cfg.hog_param['cell_per_block'])
     
 
