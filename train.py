@@ -149,10 +149,10 @@ def train(img_folder, logo_size, orientations, pixels_per_cell, cells_per_block)
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', "--data_folder", help='Training brands\' screenshots to create positive samples', default= 'D:/ruofan/git_space/phishpedia/benchmark/Train_5brand')
-    parser.add_argument('-a', "--annot_file", help='Annotation for training brands', default='D:/ruofan/git_space/phishpedia/benchmark/phish1000_coord.txt' )
-    parser.add_argument('-o', '--output_folder', help='Created training folder', default='D:/ruofan/git_space/phishpedia/benchmark/SVM_imageset')
-    parser.add_argument('-b', '--benign_folder', help='Benign screenshots to create negative samples', default='D:/ruofan/git_space/phishpedia/benchmark/test15k_wo_localcontent/benign_sample_15k')
+    parser.add_argument('-d', "--data_folder", help='Training brands\' screenshots to create positive samples', default= 'benchmark/Train_5brand')
+    parser.add_argument('-a', "--annot_file", help='Annotation for training brands', default='benchmark/phish1000_coord.txt' )
+    parser.add_argument('-o', '--output_folder', help='Created training folder', default='benchmark/SVM_imageset')
+    parser.add_argument('-b', '--benign_folder', help='Benign screenshots to create negative samples', default='benchmark/benign_sample_15k')
     parser.add_argument('-r', '--negpos_ratio', type=int, default=3)
     args = parser.parse_args()
     

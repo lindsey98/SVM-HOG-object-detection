@@ -53,12 +53,12 @@ def result_gen(write_path, folder, model_dir):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', "--output_path", help='Where you save the result txt file',
-                         default= 'D:/ruofan/git_space/phishpedia/benchmark/logosense_test.txt')
+                         default= 'benchmark/logosense_test.txt')
 
     parser.add_argument('-f', "--folder", help='Folder you want to test',
-                        default='D:/ruofan/git_space/phishpedia/benchmark/test15k_wo_localcontent/benign_sample_15k' )
+                        default='benchmark/benign_sample_15k' )
 
-    parser.add_argument('-m', '--model_dir', help='Models for 5 brands', default='D:/ruofan/git_space/phishpedia/benchmark/SVM_imageset')
+    parser.add_argument('-m', '--model_dir', help='Models for 5 brands', default='benchmark/SVM_imageset')
     args = parser.parse_args()
 
     result_gen(args.output_path, args.folder, args.model_dir)
