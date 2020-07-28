@@ -33,14 +33,19 @@ $ python train.py [options/default]
 options:
     -d 
         Training screenshots used to create positive samples
+        default is data/Train_5brand
     -a 
         Logo position labels for positive samples
+        default is data/phish1000_coord.txt
     -o 
         Output directory to save training samples as well as models
+        default is data/SVM_imageset
     -b 
         Benign screenshots to create negative samples
+        default is data/benign_sample_15k
     -r 
         Ratio of negative samples over positive samples
+        default is 3
 ```
 
 - Test the classifer 
@@ -48,11 +53,13 @@ options:
 $ python test.py [options/default]
     -p 
         path to output file
+        default is data/logosense_test.txt
     -f 
         test data folder which contains screenshots
+        choose either data/benign_sample_15k or data/Sampled_phish_5brand
     -m
         folder with pre-saved svm models
-    
+        default is data/SVM_imageset
 ```
 
 ## Examples 

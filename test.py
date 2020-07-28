@@ -55,8 +55,7 @@ if __name__ == '__main__':
     parser.add_argument('-p', "--output_path", help='Where you save the result txt file',
                          default= 'data/logosense_test.txt')
 
-    parser.add_argument('-f', "--folder", help='Folder you want to test',
-                        default='data/benign_sample_15k' )
+    parser.add_argument('-f', "--folder", help='Folder you want to test', required=True)
 
     parser.add_argument('-m', '--model_dir', help='Models for 5 brands', default='data/SVM_imageset')
     args = parser.parse_args()
