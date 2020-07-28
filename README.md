@@ -5,6 +5,9 @@ A Supported-vector-machine approach for object detection
 
 # Project Structure
 ```
+|
+|__data:
+|        the training folder(Train_5brand), testing folder(benign_sample_15k and Sampled_phish_5brand), intermediate folder(SVM_imageset)
 |__config.py: 
 |        the parameters for HOG, sliding window size, common logo size
 |__train.py: 

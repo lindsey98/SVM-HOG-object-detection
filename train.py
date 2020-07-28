@@ -126,7 +126,8 @@ def train(img_folder, logo_size, orientations, pixels_per_cell, cells_per_block)
             img = img.resize((logo_size[0], logo_size[1])).convert('RGB')
             # Now we calculate the HOG for negative features
             fd = hog(img, orientations=orientations, pixels_per_cell=(pixels_per_cell, pixels_per_cell),
-                     cells_per_block=(cells_per_block, cells_per_block), block_norm='L2', feature_vector=True, multichannel=True)
+                     cells_per_block=(cells_per_block, cells_per_block),
+                     block_norm='L2', feature_vector=True, multichannel=True)
             # fd = fd.reshape(-1, 1)
             data.append(fd)
             labels.append(0)  ## label as positive (non-logo)
