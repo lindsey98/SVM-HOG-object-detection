@@ -25,7 +25,7 @@ A Supported-vector-machine approach for object detection
     pip install -r requirements.txt
 ```
 
-- Download data folder from **https://drive.google.com/file/d/13Cf3iSwLxD6D9A-CxapJj3GGyF6NqtoF/view?usp=sharing**
+- Download data folder from **https://drive.google.com/file/d/1R0SrFBAmFeP4jJoNKOjsJXynfSqKV5ec/view?usp=sharing**
   
 - Train a SVM classifier for logo/non-logo patches
 ``` 
